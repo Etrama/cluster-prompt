@@ -1,6 +1,6 @@
 Setup your OpenAI key as an environment variable called: OPENAI_API_KEY (variable name), the variable value will be your API key.
 
-```
+
 ## Installation
 Clone this repo and install with `pip`.
 ```
