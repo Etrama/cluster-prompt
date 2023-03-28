@@ -1,26 +1,10 @@
-# PaL:  Program-Aided Language Model
-Repo for the paper [PaL: Program-Aided Language Models](https://arxiv.org/pdf/2211.10435.pdf).
-
-In PaL, Large Language Model solves reasoning problems that involve complex arithmetic and procedural tasks by generating reasoning chains of **text and code**.  This offloads the execution of the code to a program runtime, in our case, a Python interpreter. In our paper, we implement PaL using a few-shot prompting approach. 
-
-<img width="879" alt="image" src="https://user-images.githubusercontent.com/15002544/202954503-b3fade57-87ff-4beb-81de-72405577b2b4.png">
+Setup your OpenAI key as an environment variable called: OPENAI_API_KEY (variable name), the variable value will be your API key.
 
 
-This repo provides an interactive implementation of PAL.
-
-## News 📢
-[Mar 2023] We have added supports for ChatGPT APIs (e.g., gpt-3.5-turbo). We expect a smooth transition for PAL over the codex API shutdown. Checkout a beta script `scripts/gsm_chatgpt.py` for Math reasoning.
-
-[Jan 2023] We release [GSM-hard](https://github.com/reasoning-machines/pal/blob/main/datasets/gsmhardv2.jsonl), a harder version of GSM8k we created. Also avaliable on [Huggingface 🤗](https://huggingface.co/datasets/reasoning-machines/gsm-hard)
-```python
-import datasets
-gsm_hard = datasets.load_dataset("reasoning-machines/gsm-hard")
-
-```
 ## Installation
 Clone this repo and install with `pip`.
 ```
-git clone https://github.com/luyug/pal
+git clone https://github.com/Etrama/PAL_v2.git
 pip install -e ./pal
 ```
 
