@@ -20,7 +20,7 @@ gsm_hard = datasets.load_dataset("reasoning-machines/gsm-hard")
 ## Installation
 Clone this repo and install with `pip`.
 ```
-git clone https://github.com/Etrama/PAL_v2
+git clone https://github.com/Etrama/PAL_v2.git
 pip install -e ./pal
 ```
 
