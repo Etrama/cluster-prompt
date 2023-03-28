@@ -32,3 +32,5 @@ We are now concerned with the exeuction of ProgramInterface and ProgramChatInter
 Edited files: interface.py, backend.py
 
 The run function will give us the actual answer at the end.
+
+The gsm_chatgpt.py file is where we write the results to a file and call the interface, runtime and backend python files.

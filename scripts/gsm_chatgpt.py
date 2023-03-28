@@ -61,7 +61,7 @@ with open(OUTPUT_PATH, 'a' if args.append else 'w') as f:
         result = copy.copy(x)
         
         try:
-            ans = itf.run(
+            ans, code_errors = itf.run(
                 math_prompts.MATH_CHAT_BETA_PROMPT.format(question=question),
                 temperature=args.temperature,
                 top_p=args.top_p,
@@ -73,11 +73,14 @@ with open(OUTPUT_PATH, 'a' if args.append else 'w') as f:
             print(e)
             ans = ''
             score = 0
+            type_error = str(e)
         scores.append(score)
         
         result['answer'] = ans
         result['score'] = score
         result['generation'] = itf.history
+        result["code_error"] = code_errors
+        result["type_error"] = type_error if type_error else ""
         f.write(json.dumps(result) + '\n')
         
         itf.clear_history()
