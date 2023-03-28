@@ -59,7 +59,8 @@ with open(OUTPUT_PATH, 'a' if args.append else 'w') as f:
     for x in pbar:
         question = x['input']
         result = copy.copy(x)
-        
+        type_error = ""
+        code_errors = ""
         try:
             ans, code_errors = itf.run(
                 math_prompts.MATH_CHAT_BETA_PROMPT.format(question=question),

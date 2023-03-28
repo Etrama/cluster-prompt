@@ -149,7 +149,7 @@ class ProgramChatInterface(ProgramInterface):
     def generate(self, prompt: str, temperature: float = 0, top_p: float = 1, max_tokens: int = 512):
         messages =[{'role': 'system', 'content': self.system_message}, {'role': 'user', 'content': prompt}]
         gen = call_chat_gpt(messages, model=self.model, stop=self.stop, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
-        print(f"generated in chat interface is: {gen}")
+        # print(f"generated in chat interface is: {gen}")
         if self.verbose:
             print(gen)
         self.history.append(gen)
@@ -166,17 +166,19 @@ class ProgramChatInterface(ProgramInterface):
     
     def run(self, prompt: str, time_out: float = 10, temperature: float = 0, top_p: float = 1, max_tokens: int = 512):
         code = self.generate(prompt, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
+        # print(f"code inside run: {code}")
+        # print(f"code type inside run: {type(code)}")
         # with timeout(time_out):
-        results = []
-        code_errors = []
+        results = ""
+        code_errors = ""
         try:
             exec_result = self.execute(code)
-            print(f"exec_result inside run: {exec_result}")
-            results.append(exec_result)#this has the numerical value of the result
-            code_errors.append(None)
+            # print(f"exec_result inside run: {exec_result}")
+            results = exec_result #this has the numerical value of the result
+            # code_errors.append(None)
             # return exec_result
         except Exception as e:
             print(e)
-            code_errors.append(str(e))
-            results.append(None)
+            code_errors = str(e)
+            # results = None
         return results, code_errors
