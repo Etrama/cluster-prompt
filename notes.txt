@@ -1,0 +1,34 @@
+When we used GPT before, our model naturally returned code.
+We assume in this case that the ChatGPT API will return code as well.
+We now parse this code, as before as done in PAL.
+
+We comment out the timeout stuff in windows as it is signal.SIGALARM will only work on Unix.
+##################################################################################
+The ProgramInterface class has the following methods:
+    - init
+    - clear_history
+    - process_generation_to_code
+    - generate
+    - execute
+    - run
+
+The new ProgramChatInterface class has the following methods:
+    - init
+    - process_generation_to_code
+    - generate
+    - run
+
+We are missing the following function in ProgramChatInterface:
+    - clear_history (MISSING)
+    - execute (MISSING)
+
+Let's follow the workflow of the ProgramChatInterface Class:
+    - It inherits from the ProgramInterface class.
+    - SO, it should have access to clear_history and execute.
+##################################################################################
+The above is taken care of.
+
+We are now concerned with the exeuction of ProgramInterface and ProgramChatInterface.
+Edited files: interface.py, backend.py
+
+The run function will give us the actual answer at the end.

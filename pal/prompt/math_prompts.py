@@ -165,7 +165,9 @@ Q: {question}
 '''.strip() + '\n\n\n'
 
 
-MATH_CHAT_BETA_SYSTEM_MESSAGE = 'You will write python program to solve math problems. You will only write code blocks.'
+# MATH_CHAT_BETA_SYSTEM_MESSAGE = 'You will write python program to solve math problems. You will only write code blocks.'
+MATH_CHAT_BETA_SYSTEM_MESSAGE = "You will write a Python function called 'solution' to solve math problems. You will only write code blocks and use comments to comment out non-executable lines."
+
 
 
 MATH_CHAT_BETA_PROMPT = '''

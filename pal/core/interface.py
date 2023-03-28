@@ -22,17 +22,18 @@ from .runtime import GenericRuntime
 from .backend import call_gpt, call_chat_gpt
 
 
-class timeout:
-    def __init__(self, seconds=1, error_message='Timeout'):
-        self.seconds = seconds
-        self.error_message = error_message
-    def timeout_handler(self, signum, frame):
-        raise TimeoutError(self.error_message)
-    def __enter__(self):
-        signal.signal(signal.SIGALRM, self.timeout_handler)
-        signal.alarm(self.seconds)
-    def __exit__(self, type, value, traceback):
-        signal.alarm(0)
+# This is useless in Windows, so we comment it out.
+# class timeout:
+#     def __init__(self, seconds=1, error_message='Timeout'):
+#         self.seconds = seconds
+#         self.error_message = error_message
+#     def timeout_handler(self, signum, frame):
+#         raise TimeoutError(self.error_message)
+#     def __enter__(self):
+#         signal.signal(signal.SIGALRM, self.timeout_handler)
+#         signal.alarm(self.seconds)
+#     def __exit__(self, type, value, traceback):
+#         signal.alarm(0)
 
 
 class TextInterface:
@@ -105,7 +106,7 @@ class ProgramInterface:
         return code
     
     def execute(self, code: Optional[List[str]] = None):
-        code = code if code else self.code
+        # code = code if code else self.code
         if self.get_answer_from_stdout:
             program_io = io.StringIO()
             with redirect_stdout(program_io):
@@ -122,24 +123,24 @@ class ProgramInterface:
             self.runtime.exec_code('\n'.join(code[:-1]))
             return self.runtime.eval_code(code[-1])
     
-    def run(self, prompt: str, time_out: float =10, temperature: float =0.0, top_p: float =1.0, 
-            max_tokens: int =512, majority_at: int =None):
-        code_snippets = self.generate(prompt, majority_at=majority_at, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
+    # def run(self, prompt: str, time_out: float =10, temperature: float =0.0, top_p: float =1.0, 
+    #         max_tokens: int =512, majority_at: int =None):
+    #     code_snippets = self.generate(prompt, majority_at=majority_at, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
         
-        results = []
-        for code in code_snippets:
-            with timeout(time_out):
-                try:
-                    exec_result = self.execute(code)
-                except Exception as e:
-                    print(e)
-                    continue
-                results.append(exec_result)
-        counter = Counter(results)
-        return counter.most_common(1)[0][0]
+    #     results = []
+    #     for code in code_snippets:
+    #         with timeout(time_out):
+    #             try:
+    #                 exec_result = self.execute(code)
+    #             except Exception as e:
+    #                 print(e)
+    #                 continue
+    #             results.append(exec_result)
+    #     counter = Counter(results)
+    #     return counter.most_common(1)[0][0]
     
     
-SYSTEM_MESSAGES = 'You are a helpful python programmer.'
+SYSTEM_MESSAGES = 'You are a helpful python programmer. Use comments to comment out non-executable lines and keep code separate from text.'
 class ProgramChatInterface(ProgramInterface):
     def __init__(self, *args, system_message: str = SYSTEM_MESSAGES, **kwargs):
         super().__init__(*args, **kwargs)
@@ -151,6 +152,7 @@ class ProgramChatInterface(ProgramInterface):
         if self.verbose:
             print(gen)
         self.history.append(gen)
+        # print(f"gen inside PCI interface is: {gen}")
         return self.process_generation_to_code(gen)
         
     def process_generation_to_code(self, gens: str):
@@ -163,9 +165,16 @@ class ProgramChatInterface(ProgramInterface):
     
     def run(self, prompt: str, time_out: float = 10, temperature: float = 0, top_p: float = 1, max_tokens: int = 512):
         code = self.generate(prompt, temperature=temperature, top_p=top_p, max_tokens=max_tokens)
-        with timeout(time_out):
-            try:
-                exec_result = self.execute(code)
-            except Exception as e:
-                print(e)
-        return exec_result
+        # with timeout(time_out):
+        results = []
+        code_errors = []
+        try:
+            exec_result = self.execute(code)
+            results.append(exec_result)
+            code_errors.append(None)
+            # return exec_result
+        except Exception as e:
+            print(e)
+            code_errors.append(str(e))
+            results.append(None)
+            

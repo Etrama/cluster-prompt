@@ -97,6 +97,7 @@ def call_chat_gpt(messages, model='gpt-3.5-turbo', stop=None, temperature=0., to
                 top_p=top_p,
                 n=1
             )
+            # print(f"Chat GPT response: {ans}")
             return ans.choices[0]['message']['content']
         except openai.error.RateLimitError as e:
             time.sleep(min(wait, 60))
