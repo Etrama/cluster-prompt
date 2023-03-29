@@ -21,6 +21,22 @@ from collections import Counter
 from .runtime import GenericRuntime
 from .backend import call_gpt, call_chat_gpt
 
+import multiprocessing.pool
+import functools
+
+def timeout(max_timeout):
+    """Timeout decorator, parameter in seconds."""
+    def timeout_decorator(item):
+        """Wrap the original function."""
+        @functools.wraps(item)
+        def func_wrapper(*args, **kwargs):
+            """Closure for function."""
+            pool = multiprocessing.pool.ThreadPool(processes=1)
+            async_result = pool.apply_async(item, args, kwargs)
+            # raises a TimeoutError if execution exceeds max_timeout
+            return async_result.get(max_timeout)
+        return func_wrapper
+    return timeout_decorator
 
 # This is useless in Windows, so we comment it out.
 # class timeout:
@@ -105,6 +121,7 @@ class ProgramInterface:
         self.history.append(gens)
         return code
     
+    @timeout(60.0)
     def execute(self, code: Optional[List[str]] = None):
         # code = code if code else self.code
         if self.get_answer_from_stdout:
@@ -177,6 +194,10 @@ class ProgramChatInterface(ProgramInterface):
             results = exec_result #this has the numerical value of the result
             # code_errors.append(None)
             # return exec_result
+        except TimeoutError as te:
+            print(te)
+            code_errors = str(te)
+            # results = None
         except Exception as e:
             print(e)
             code_errors = str(e)
