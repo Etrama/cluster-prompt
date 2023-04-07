@@ -17,6 +17,7 @@ import time
 import os
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
+openai.organization = 'org-a2oA8M8qmDzmBUQJ881rC05Q'
 
 # GPT-3 API
 def call_gpt(prompt, model='code-davinci-002', stop=None, temperature=0., top_p=1.0,
@@ -102,4 +103,7 @@ def call_chat_gpt(messages, model='gpt-3.5-turbo', stop=None, temperature=0., to
         except openai.error.RateLimitError as e:
             time.sleep(min(wait, 60))
             wait *= 2
+        except Exception as e:
+            #handles random errors like HTTP code 502: Bad gateway
+            time.sleep(60)
     raise RuntimeError('Failed to call chat gpt')

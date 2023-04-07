@@ -21,12 +21,14 @@ import os
 
 from pal import interface
 from pal.prompt import math_prompts
+from datetime import datetime
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--append', action='store_true')
 parser.add_argument('--verbose', action='store_true')
 # parser.add_argument('--dataset', default='gsm', type=str)
-parser.add_argument('--dataset', default='gsm783onwards', type=str)
+parser.add_argument('--dataset', default='gsm', type=str)
 parser.add_argument('--model', default='gpt-3.5-turbo', type=str)
 parser.add_argument('--temperature', default=0.0, type=float)
 parser.add_argument('--top_p', default=1.0, type=float)
@@ -34,8 +36,10 @@ parser.add_argument('--max_tokens', default=512, type=int)
 args = parser.parse_args()
 
 DATA_PATH = f'datasets/{args.dataset}.jsonl'
-OUTPUT_PATH = f'eval_results/{args.dataset}.chat.jsonl'
+FILE_NAME = datetime.now().strftime("%d-%m-%Y_%H%M%S") + "_" + os.getlogin() + "_" + args.dataset
+OUTPUT_PATH = f'eval_results/{FILE_NAME}.chat.jsonl'
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+
 
 examples = list(map(json.loads, open(DATA_PATH)))
 
@@ -88,4 +92,9 @@ with open(OUTPUT_PATH, 'a' if args.append else 'w') as f:
         itf.clear_history()
         f.flush()
 
-print(f'Accuracy - {sum(scores) / len(scores)}')
+
+acc = sum(scores) / len(scores)
+print(f'Accuracy - {acc}')
+
+os.rename(OUTPUT_PATH, f'eval_results/{FILE_NAME}_acc{round(acc*100, 2)}.chat.jsonl')
+
