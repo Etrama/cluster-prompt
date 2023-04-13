@@ -213,3 +213,104 @@ def solution():
 How about this question?
 Q: {question}
 '''.strip()
+
+MATH_CHAT_NO_QUESTION = '''
+Let's use python to solve math problems. Here are three examples how to do it,
+Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+```
+def solution():
+    money_initial = 23
+    bagels = 5
+    bagel_cost = 3
+    money_spent = bagels * bagel_cost
+    money_left = money_initial - money_spent
+    result = money_left
+    return result
+```
+
+Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?
+```
+def solution():
+    golf_balls_initial = 58
+    golf_balls_lost_tuesday = 23
+    golf_balls_lost_wednesday = 2
+    golf_balls_left = golf_balls_initial - golf_balls_lost_tuesday - golf_balls_lost_wednesday
+    result = golf_balls_left
+    return result
+```
+
+Q: There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?
+```
+def solution():
+    computers_initial = 9
+    computers_per_day = 5
+    num_days = 4  # 4 days between monday and thursday
+    computers_added = computers_per_day * num_days
+    computers_total = computers_initial + computers_added
+    result = computers_total
+    return result
+```
+
+How about this question?
+Q: {question}
+'''.strip()
+
+
+MATH_CHAT_PART_SOL = '''
+Let's use python to solve math problems. Here are three examples how to do it,
+Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+```
+def solution():
+    money_initial = 23
+    bagels = 5
+    bagel_cost = 3
+    money_spent = bagels * bagel_cost
+    money_left = money_initial - money_spent
+    result = money_left
+    return result
+```
+
+Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?
+```
+def solution():
+    golf_balls_initial = 58
+    golf_balls_lost_tuesday = 23
+    golf_balls_lost_wednesday = 2
+    golf_balls_left = golf_balls_initial - golf_balls_lost_tuesday - golf_balls_lost_wednesday
+    result = golf_balls_left
+    return result
+```
+
+Q: There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?
+```
+def solution():
+    computers_initial = 9
+    computers_per_day = 5
+    num_days = 4  # 4 days between monday and thursday
+    computers_added = computers_per_day * num_days
+    computers_total = computers_initial + computers_added
+    result = computers_total
+    return result
+```
+
+How about this question?
+Q: {question}
+```
+def solution():
+    # Define the variables
+    cups_per_chicken = 3
+    num_chickens = 20
+    morning_feed = 15
+    afternoon_feed = 25
+
+    # Calculate the total amount of feed given to the chickens
+    total_feed = (morning_feed + afternoon_feed) * cups_per_chicken * num_chickens
+
+    # Calculate the amount of feed given in the final meal of the day
+    final_feed = total_feed / 3
+
+    return final_feed
+```
+Correct the solution.
+
+'''.strip()
