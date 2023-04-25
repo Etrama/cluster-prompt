@@ -9,6 +9,7 @@ A: To answer the question “How old is Pam now?”, we need to know: “How muc
 Q: As a freelancer, Baylor is paid for every finished work of a client he does on a freelance marketplace. Currently, he has $4000 on his dashboard from previous work done. He is currently working for three clients, with the first client paying him half the amount of money he currently has on his dashboard once the job is done. The second client will pay him 2/5 times more money than the first client once Baylor finishes his work. The third client will pay him twice the amount of money the first and second clients pay him together once he finishes the job. How much money will Baylor have in his dashboard after all the clients pay him for his work?
 A: To answer the question “How much money will Baylor have in his dashboard after all the clients pay him for his work?”, we need to know: “How much will Baylor’s first client pay him for his work?”, “How much more will Baylor’s second client pay him for his work compared to the first client?”, “How much will Baylor’s second client pay him for his work?”, “How much will the first and second clients pay him together once he finishes the job?”, “How much will Baylor’s third client pay him for his work?”, “How much money will all the clients pay Baylor for his work?”.
 
+
 Q: Cappuccinos cost $2, iced teas cost $3, cafe lattes cost $1.5 and espressos cost $1 each. Sandy orders some drinks for herself and some friends. She orders three cappuccinos, two iced teas, two cafe lattes, and two espressos. How much change does she receive back for a twenty-dollar bill?
 A: To answer the question “How much change does she receive back for a twenty-dollar bill?”, we need to know: “How much did the cappuccinos cost in total?”, “How much did the iced teas cost in total?”, “How much did the cafe lattes cost in total?”, “How much did the espressos cost in total?”, “How much did the drinks cost in total?”.
 
@@ -18,4 +19,10 @@ A: To answer the question “How much money will they raise?”, we need to know
 
 
 Q: On a moonless night, three fireflies danced in the evening breeze. They were joined by four less than a dozen more fireflies, before two of the fireflies flew away. How many fireflies remained?
-A: To answer the question “How many fireflies remained?”, we need to know: “How many fireflies joined?”. Q: Sam, Sid, and Steve brought popsicle sticks for their group activity in their Art class. Sam has thrice as many as Sid, and Sid has twice as many as Steve. If Steve has 12 popsicle sticks, how many popsicle sticks can they use for their Art class activity? A: To answer the question “How many popsicle sticks can they use for their Art class activity?”, we need to know: “How many popsicle sticks does Sid have?”, “How many popsicle sticks does Sam have?”.
+A: To answer the question “How many fireflies remained?”, we need to know: “How many fireflies joined?”.
+
+
+Q: Sam, Sid, and Steve brought popsicle sticks for their group activity in their Art class. Sam has thrice as many as Sid, and Sid has twice as many as Steve. If Steve has 12 popsicle sticks, how many popsicle sticks can they use for their Art class activity?
+A: To answer the question “How many popsicle sticks can they use for their Art class activity?”, we need to know: “How many popsicle sticks does Sid have?”, “How many popsicle sticks does Sam have?”.
+
+
