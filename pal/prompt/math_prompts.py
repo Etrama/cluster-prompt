@@ -256,61 +256,174 @@ Q: {question}
 '''.strip()
 
 
-MATH_CHAT_PART_SOL = '''
+MATH_CHAT_CHAIN = '''
 Let's use python to solve math problems. Here are three examples how to do it,
+Let's break down question into smaller steps. 
 Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+1. Determine the total cost of the bagels.
+2. Subtract the total cost of the bagels from Olivia's initial amount of money.
 ```
 def solution():
+    """Olivia has $23. She bought five bagels for $3 each. How much money does she have left?"""
     money_initial = 23
     bagels = 5
     bagel_cost = 3
+    #Determine the total cost of the bagels.
     money_spent = bagels * bagel_cost
+    #Subtract the total cost of the bagels from Olivia's initial amount of money.
     money_left = money_initial - money_spent
     result = money_left
     return result
 ```
 
+Let's break down question into smaller steps. 
 Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?
+1. Start with the initial number of golf balls Michael had: 58.
+2. Determine how many golf balls Michael lost on Tuesday: 23.
+3. Subtract the number of golf balls lost on Tuesday from the initial number of golf balls to find out how many golf balls Michael had left after Tuesday.
+4. Determine how many golf balls Michael lost on Wednesday: 2.
+5. Subtract the number of golf balls lost on Wednesday from the number of golf balls Michael had left after Tuesday to find out how many golf balls Michael had at the end of Wednesday.
 ```
 def solution():
+    """Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?"""
+    #Start with the initial number of golf balls Michael had: 58.
     golf_balls_initial = 58
+    #Determine how many golf balls Michael lost on Tuesday: 23.
     golf_balls_lost_tuesday = 23
+    #Subtract the number of golf balls lost on Tuesday from the initial number of golf balls to find out how many golf balls Michael had left after Tuesday.
+    golf_balls_left = golf_balls_initial - golf_balls_lost_tuesday
+    #Determine how many golf balls Michael lost on Wednesday: 2.
     golf_balls_lost_wednesday = 2
-    golf_balls_left = golf_balls_initial - golf_balls_lost_tuesday - golf_balls_lost_wednesday
+    #Subtract the number of golf balls lost on Wednesday from the number of golf balls Michael had left after Tuesday to find out how many golf balls Michael had at the end of Wednesday.
+    golf_balls_left = golf_balls_left - golf_balls_lost_wednesday
     result = golf_balls_left
     return result
 ```
 
+Let's break down question into smaller steps. 
 Q: There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?
+1. Start with the initial number of computers in the server room, which is 9.
+2. Determine the number of days from Monday to Thursday, which is 4.
+3. Determine the number of computers installed each day, which is 5.
+3. Calculate the total number of computers installed during those 4 days by multiplying 5 (the number of computers installed each day) by 4 (the number of days).
+4. Add the total number of computers installed to the initial number of computers to get the total number of computers in the server room now.
 ```
 def solution():
+    """There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?"""
+    #Start with the initial number of computers in the server room, which is 9.
     computers_initial = 9
+    #Determine the number of days from Monday to Thursday, which is 4.
+    num_days = 4
+    #Determine the number of computers installed each day, which is 5.
     computers_per_day = 5
-    num_days = 4  # 4 days between monday and thursday
+    #Calculate the total number of computers installed during those 4 days by multiplying 5 (the number of computers installed each day) by 4 (the number of days).
     computers_added = computers_per_day * num_days
+    #Add the total number of computers installed to the initial number of computers to get the total number of computers in the server room now.
     computers_total = computers_initial + computers_added
     result = computers_total
     return result
 ```
 
-How about this question?
+Let's break down question into smaller steps.
 Q: {question}
+{chain}
+'''.strip()
+
+SYSTEM_BREAK_DONW_MESSAGES = 'You are a helpful mathematitian. Break down the problem into smaller steps without solving.'
+MATH_BREAK_DOWN = '''
+Let's break down question into smaller steps. Here are three examples how to do it,
+Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+1. Determine the total cost of the bagels.
+2. Subtract the total cost of the bagels from Olivia's initial amount of money.
+
+Let's break down question into smaller steps. 
+Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?
+1. Start with the initial number of golf balls Michael had: 58.
+2. Determine how many golf balls Michael lost on Tuesday: 23.
+3. Subtract the number of golf balls lost on Tuesday from the initial number of golf balls to find out how many golf balls Michael had left after Tuesday.
+4. Determine how many golf balls Michael lost on Wednesday: 2.
+5. Subtract the number of golf balls lost on Wednesday from the number of golf balls Michael had left after Tuesday to find out how many golf balls Michael had at the end of Wednesday.
+
+Let's break down question into smaller steps. 
+Q: There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?
+1. Start with the initial number of computers in the server room, which is 9.
+2. Determine the number of days from Monday to Thursday, which is 4.
+3. Determine the number of computers installed each day, which is 5.
+3. Calculate the total number of computers installed during those 4 days by multiplying 5 (the number of computers installed each day) by 4 (the number of days).
+4. Add the total number of computers installed to the initial number of computers to get the total number of computers in the server room now.
+
+Let's break down question into smaller steps.
+Q: {question}
+'''.strip()
+
+MATH_CHAT_CHAIN_DIRECT = '''
+Let's use python to solve math problems. Here are three examples how to do it,
+Let's break down question into smaller steps. 
+Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+1. Determine the total cost of the bagels.
+2. Subtract the total cost of the bagels from Olivia's initial amount of money.
 ```
 def solution():
-    # Define the variables
-    cups_per_chicken = 3
-    num_chickens = 20
-    morning_feed = 15
-    afternoon_feed = 25
-
-    # Calculate the total amount of feed given to the chickens
-    total_feed = (morning_feed + afternoon_feed) * cups_per_chicken * num_chickens
-
-    # Calculate the amount of feed given in the final meal of the day
-    final_feed = total_feed / 3
-
-    return final_feed
+    """Olivia has $23. She bought five bagels for $3 each. How much money does she have left?"""
+    money_initial = 23
+    bagels = 5
+    bagel_cost = 3
+    #Determine the total cost of the bagels.
+    money_spent = bagels * bagel_cost
+    #Subtract the total cost of the bagels from Olivia's initial amount of money.
+    money_left = money_initial - money_spent
+    result = money_left
+    return result
 ```
-Correct the solution.
 
+Let's break down question into smaller steps. 
+Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?
+1. Start with the initial number of golf balls Michael had: 58.
+2. Determine how many golf balls Michael lost on Tuesday: 23.
+3. Subtract the number of golf balls lost on Tuesday from the initial number of golf balls to find out how many golf balls Michael had left after Tuesday.
+4. Determine how many golf balls Michael lost on Wednesday: 2.
+5. Subtract the number of golf balls lost on Wednesday from the number of golf balls Michael had left after Tuesday to find out how many golf balls Michael had at the end of Wednesday.
+```
+def solution():
+    """Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?"""
+    #Start with the initial number of golf balls Michael had: 58.
+    golf_balls_initial = 58
+    #Determine how many golf balls Michael lost on Tuesday: 23.
+    golf_balls_lost_tuesday = 23
+    #Subtract the number of golf balls lost on Tuesday from the initial number of golf balls to find out how many golf balls Michael had left after Tuesday.
+    golf_balls_left = golf_balls_initial - golf_balls_lost_tuesday
+    #Determine how many golf balls Michael lost on Wednesday: 2.
+    golf_balls_lost_wednesday = 2
+    #Subtract the number of golf balls lost on Wednesday from the number of golf balls Michael had left after Tuesday to find out how many golf balls Michael had at the end of Wednesday.
+    golf_balls_left = golf_balls_left - golf_balls_lost_wednesday
+    result = golf_balls_left
+    return result
+```
+
+Let's break down question into smaller steps. 
+Q: There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?
+1. Start with the initial number of computers in the server room, which is 9.
+2. Determine the number of days from Monday to Thursday, which is 4.
+3. Determine the number of computers installed each day, which is 5.
+3. Calculate the total number of computers installed during those 4 days by multiplying 5 (the number of computers installed each day) by 4 (the number of days).
+4. Add the total number of computers installed to the initial number of computers to get the total number of computers in the server room now.
+```
+def solution():
+    """There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?"""
+    #Start with the initial number of computers in the server room, which is 9.
+    computers_initial = 9
+    #Determine the number of days from Monday to Thursday, which is 4.
+    num_days = 4
+    #Determine the number of computers installed each day, which is 5.
+    computers_per_day = 5
+    #Calculate the total number of computers installed during those 4 days by multiplying 5 (the number of computers installed each day) by 4 (the number of days).
+    computers_added = computers_per_day * num_days
+    #Add the total number of computers installed to the initial number of computers to get the total number of computers in the server room now.
+    computers_total = computers_initial + computers_added
+    result = computers_total
+    return result
+```
+
+Let's break down question into smaller steps.
+Q: {question}
 '''.strip()
