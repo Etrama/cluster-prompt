@@ -67,8 +67,8 @@ with open(OUTPUT_PATH, 'a' if args.append else 'w') as f:
 
             #ans = chain.split('is ')[-1].split(' ')[0].strip(',. ')
             #ans = re.sub("[^\d\.]", "", ans)
-            ans = re.findall("[-+]?[.]?[\d]+(?:,\d\d\d)*[\.]?\d*(?:[eE][-+]?\d+)?", chain)[-1]
-            ans = re.sub("[^\d\.\-]", "", ans)
+            ans = re.findall("[-+]?[.]?[\d]+(?:,\d\d\d)*[\.]?\d*(?:[eE][-+]?\d+)?", chain)[-1] # extracts number
+            ans = re.sub("[^\d\.\-]", "", ans) #removes commas ex: 8,000,234.1234
 
             ans = float(ans)
             score = 1 if abs(ans - x['target']) < 1e-3 else 0
