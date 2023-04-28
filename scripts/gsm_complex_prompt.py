@@ -18,6 +18,7 @@ import json
 import argparse
 import tqdm
 import os
+import re
 
 from pal import interface
 from pal.prompt import math_prompts
@@ -43,13 +44,6 @@ os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
 examples = list(map(json.loads, open(DATA_PATH)))
 
-itf = interface.ProgramChatInterface(
-    stop=None,
-    get_answer_expr='solution()',
-    model=args.model,
-    verbose=args.verbose,
-    system_message=math_prompts.MATH_CHAT_BETA_SYSTEM_MESSAGE,
-)
 
 if args.append:
     lines = open(OUTPUT_PATH).readlines()
@@ -64,20 +58,18 @@ with open(OUTPUT_PATH, 'a' if args.append else 'w') as f:
     for x in pbar:
         question = x['input']
         result = copy.copy(x)
-        type_error = ""
-        code_errors = ""
+        type_error = ''
         try:
-            prompt = math_prompts.MATH_BREAK_DOWN.format(question=question)
-            messages =[{'role': 'system', 'content': math_prompts.SYSTEM_BREAK_DONW_MESSAGES}, {'role': 'user', 'content': prompt}]
+            #prompt = math_prompts.COMPLEX_COT.format(question=question)
+            prompt = math_prompts.LEAST_TO_MOST.format(question=question)
+            messages =[{'role': 'system', 'content': math_prompts.SYSTEM_COMPLEX_COT_MESSAGE}, {'role': 'user', 'content': prompt}]
             chain = call_chat_gpt(messages, max_tokens=512)
 
-            ans, code_errors = itf.run(
-                math_prompts.MATH_CHAT_CHAIN.format(question=question, chain=chain),
-                #math_prompts.MATH_CHAT_CHAIN_DIRECT.format(question=question),
-                temperature=args.temperature,
-                top_p=args.top_p,
-                max_tokens=args.max_tokens
-            )
+            #ans = chain.split('is ')[-1].split(' ')[0].strip(',. ')
+            #ans = re.sub("[^\d\.]", "", ans)
+            ans = re.findall("[-+]?[.]?[\d]+(?:,\d\d\d)*[\.]?\d*(?:[eE][-+]?\d+)?", chain)[-1]
+            ans = re.sub("[^\d\.\-]", "", ans)
+
             ans = float(ans)
             score = 1 if abs(ans - x['target']) < 1e-3 else 0
         except Exception as e:
@@ -89,12 +81,9 @@ with open(OUTPUT_PATH, 'a' if args.append else 'w') as f:
         
         result['answer'] = ans
         result['score'] = score
-        result['generation'] = itf.history
-        result["code_error"] = code_errors
+        result['generation'] = chain
         result["type_error"] = type_error if type_error else ""
         f.write(json.dumps(result) + '\n')
-        
-        itf.clear_history()
         f.flush()
 
 
