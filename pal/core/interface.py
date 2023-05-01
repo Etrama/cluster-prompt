@@ -19,7 +19,7 @@ from typing import Any, Callable, List, Optional
 from collections import Counter
 
 from .runtime import GenericRuntime
-from .backend import call_gpt, call_chat_gpt
+from .backend import call_gpt, call_chat_gpt, call_chat_gpt_self_consistency
 
 import multiprocessing.pool
 import functools
@@ -203,3 +203,44 @@ class ProgramChatInterface(ProgramInterface):
             code_errors = str(e)
             # results = None
         return results, code_errors
+
+
+class ProgramSelfConsitencyChatInterface(ProgramInterface):
+    def __init__(self, *args, system_message: str = SYSTEM_MESSAGES, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.system_message = system_message
+
+    def generate(self, prompt: str, temperature: float = 0.7, top_p: float = 0.95, max_tokens: int = 512, majority_at: int =1, ):
+        messages = [{'role': 'system', 'content': self.system_message}, {'role': 'user', 'content': prompt}]
+        gens = call_chat_gpt_self_consistency(messages, temperature=temperature, top_p=top_p, max_tokens=max_tokens, majority_at=majority_at)
+        code_snippets = [self.process_generation_to_code(gen) for gen in gens]
+        self.history.append(code_snippets)
+        return code_snippets
+
+    def process_generation_to_code(self, gens: str):
+        if '```python' in gens:
+            gens = gens.split('```python')[1].split('```')[0]
+        elif '```' in gens:
+            gens = gens.split('```')[1].split('```')[0]
+
+        return gens.split('\n')
+
+    def run(self, prompt: str, temperature: float = 0.7, top_p: float = 0.95, max_tokens: int = 512, majority_at: int =40, ):
+        code_snippets = self.generate(prompt, temperature=temperature, top_p=top_p, max_tokens=max_tokens, majority_at=majority_at)
+
+        results = []
+        code_errors = []
+        for code in code_snippets:
+            try:
+                exec_result = self.execute(code)
+                results.append(exec_result)
+                code_errors.append("None")
+            except TimeoutError as te:
+                print(te)
+                code_errors.append(str(te))
+            except Exception as e:
+                print(e)
+                code_errors.append(str(e))
+
+        return results, code_errors
+

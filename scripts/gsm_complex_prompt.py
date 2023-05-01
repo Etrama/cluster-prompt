@@ -60,8 +60,7 @@ with open(OUTPUT_PATH, 'a' if args.append else 'w') as f:
         result = copy.copy(x)
         type_error = ''
         try:
-            #prompt = math_prompts.COMPLEX_COT.format(question=question)
-            prompt = math_prompts.LEAST_TO_MOST.format(question=question)
+            prompt = math_prompts.COMPLEX_COT.format(question=question)
             messages =[{'role': 'system', 'content': math_prompts.SYSTEM_COMPLEX_COT_MESSAGE}, {'role': 'user', 'content': prompt}]
             chain = call_chat_gpt(messages, max_tokens=512)
 

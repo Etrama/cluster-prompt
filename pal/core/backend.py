@@ -107,3 +107,39 @@ def call_chat_gpt(messages, model='gpt-3.5-turbo', stop=None, temperature=0., to
             #handles random errors like HTTP code 502: Bad gateway
             time.sleep(60)
     raise RuntimeError('Failed to call chat gpt')
+
+
+def call_chat_gpt_self_consistency(messages, model='gpt-3.5-turbo', stop=None, temperature=0., top_p=1.0, max_tokens=128, majority_at=1, num_completions_batch_size = 5):
+    wait = 1
+    num_completions = majority_at
+    completions = []
+    while True:
+        requested_completions = min(num_completions_batch_size, num_completions - len(completions))
+        try:
+            ans = openai.ChatCompletion.create(
+                model=model,
+                max_tokens=max_tokens,
+                stop=stop,
+                messages=messages,
+                temperature=temperature,
+                top_p=top_p,
+                n=requested_completions
+            )
+            # print(f"Chat GPT response: {ans}")
+
+
+            if majority_at == 1:
+                return ans.choices[0]['message']['content']
+            else:
+                completions.extend([choice['message']['content'] for choice in ans['choices']])
+                if len(completions) >= num_completions:
+                    return completions[:num_completions]
+        except openai.error.RateLimitError as e:
+            time.sleep(min(wait, 60))
+            wait *= 2
+            print(e)
+        except Exception as e:
+            #handles random errors like HTTP code 502: Bad gateway
+            time.sleep(60)
+            print(e)
+    raise RuntimeError('Failed to call chat gpt')
