@@ -31,7 +31,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--append', action='store_true')
 parser.add_argument('--verbose', action='store_true')
 parser.add_argument('--dataset', default='reduced_gsm', type=str)
-parser.add_argument('--model', default='gpt-3.5-turbo', type=str)
+parser.add_argument('--model', default='gpt-4', type=str)
 parser.add_argument('--temperature', default=0.7, type=float)
 parser.add_argument('--top_p', default=0.95, type=float)
 parser.add_argument('--max_tokens', default=512, type=int)
@@ -78,6 +78,7 @@ with open(OUTPUT_PATH, 'a' if args.append else 'w') as f:
             messages =[{'role': 'system', 'content': math_prompts.SYSTEM_COMPLEX_COT_MESSAGE}, {'role': 'user', 'content': prompt}]
             cp_gens = call_chat_gpt_self_consistency(
                 messages,
+                model=args.model,
                 temperature=args.temperature,
                 top_p=args.top_p,
                 max_tokens=args.max_tokens,

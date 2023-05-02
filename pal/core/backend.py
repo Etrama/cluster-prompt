@@ -140,6 +140,7 @@ def call_chat_gpt_self_consistency(messages, model='gpt-3.5-turbo', stop=None, t
             print(e)
         except Exception as e:
             #handles random errors like HTTP code 502: Bad gateway
-            time.sleep(60)
             print(e)
+            time.sleep(60)
+
     raise RuntimeError('Failed to call chat gpt')
