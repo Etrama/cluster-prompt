@@ -1,0 +1,78 @@
+Question: On a particular day, a car traveled from Ningi to Zipra in 80% of the time it traveled from Ngapara to Zipra. If the car took 60 hours to travel from Ngapara to Zipra, calculate the total time the car traveled that day.
+Let's think step by step
+If the car traveled from Ningi to Zipra in 80% of the time it traveled from Ngapara to Zipra, it took 80/100*60 = 48 hours to travel from Ningi to Zipra.
+The total travel time that day is 48+60 = 108 hours
+The answer is 108
+
+Question: A rectangle has a length of 3 inches and a width of 6 inches. A square has a width of 5 inches. What is the difference in area between the two shapes?
+Let's think step by step
+The area of the rectangle is 3 x 6 = 18 sq in
+The area of the square is 5 x 5 = 25 sq in
+The difference is 25 - 18 = 7 sq in
+The answer is 7
+
+Question: Martine has 6 more than twice as many peaches as Benjy. Benjy has one-third as many peaches as Gabrielle. If Martine has 16 peaches, how many does Gabrielle have?
+Let's think step by step
+Benjy has b peaches.
+Martine has 6+2b=16 peaches
+2b=10
+b=5
+Then Gabrielle has 5*3=15.
+The answer is 15
+
+Question: Dulce's father has eight orange trees on his farm. If each tree has 200 fruits and Dulce picks 2/5 of the oranges from each tree, calculate the total number of fruits remaining in all the trees.
+Let's think step by step
+The total number of oranges in all the trees before Dulce picked any is 8 trees * 200 oranges/tree = 1600 oranges.
+If each orange tree has 200 oranges, and Dulce picks 2/5 of each tree's oranges, she picks 2/5 * 200 oranges = 80 oranges.
+Since the total number of orange trees is eight, Dulce picked 8 trees * 80 oranges/tree = 640 oranges from all the trees.
+After picking 640 oranges from the trees, the total number of oranges remaining became 1600 oranges - 640 oranges = 960 oranges.
+The answer is 960
+
+Question: Carla is taking attendance for her sixth-grade class. She knows that 2 students are in the restroom, and one less than three times that number of students are absent. If there are four rows with six desks each that are all 2/3 full, how many students does Carla teach, including the ones in and out of the classroom?
+Let's think step by step
+First find the number of absent students: 2 students * 3 - 1= 5 students
+Now find the number of students in each row of desks: 6 desks/row * 2 students / 3 desks = 4 students/row
+Now find the number of students in all the rows: 4 rows * 4 students/row = 16 students
+Now add the students that are absent or in the bathroom: 16 students + 2 students + 5 students = 23 students
+The answer is 23
+
+Question: Barry wants to make a huge salad using only cucumbers and tomatoes. He will use a total of 280 pieces of vegetables. If there are thrice as many tomatoes as cucumbers, how many cucumbers will be used in the salad?
+Let's think step by step
+Let c be the number of cucumbers and t the number of tomatoes.
+The total is the sum of the number of cucumbers and that of tomatoes, which is c + t = 280 piece of vegetables
+Since there are thrice as many tomatoes as cucumbers, this means c =t/3
+Therefore 3*c = t.
+The sum will therefore be c + 3*c = 280 pieces of vegetables
+This means that 4*c = 280 vegetables
+Therefore c = 280/4 = 70 cucumbers.
+The answer is 70
+
+Question: Roberto and Valerie are jumping rope at recess. Roberto can skip 4,200 times an hour. Valerie can skip 80 times a minute. If they jump rope for fifteen minutes straight, how many skips will they total?
+Let's think step by step
+Roberto skips 70 times per minute because 4,200 / 60 = 70.
+Together they skip 150 times a minute.
+They will skip 2,250 times because 150 x 15 = 2,250
+The answer is 2,250
+
+Question: Sam shared a sum of money between his three cousins Sandra, Amy and Ruth in the ratio 2:1:3 respectively. If Amy got $50, how much did Sandra get?
+Let's think step by step
+Going by the ratio, for every 1 part that Amy gets, Sandra will get 2 parts
+Since Amy got $50, Sandra will get 2*$50 = $100
+The answer is 100
+
+Question: Bingley has 5 bracelets. Kelly gives Bingley a fourth of her 16 bracelets. Then Bingley gives a third of his bracelets to his little sister. How many bracelets does Bingley have remaining?
+Let's think step by step
+Kelly gives Bingley 16 / 4 = 4 bracelets
+Bingley has 5 + 4 = 9 bracelets
+Bingley gives his little sister 9 / 3 = 3 bracelets
+In the end, Bingley has 9 - 3 = 6 bracelets remaining
+The answer is 6
+
+Question: Sam bought a heavy safe with a combination lock. There were four rows with twenty gold bars per row arranged in the safe. If each gold bar is worth $20000, calculate the total worth of the gold bars in the safe.
+Let's think step by step
+If there were four rows of twenty gold bars arranged in the safe, the total number of bars in the safe is 4*20 = 80 bars.
+Since each gold bar is worth $20000, the 80 bars are worth 80*$20000 = $1,600,000
+The answer is 1600000
+
+Question: {question}
+Let's think step by step

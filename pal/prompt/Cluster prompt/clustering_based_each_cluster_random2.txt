@@ -1,0 +1,80 @@
+Question: Uncle Jude baked 256 cookies. He gave 15 cookies to Tim, 23 cookies to Mike, kept some in the fridge and gave the rest to Anna. How many cookies did he put in the fridge if he gave twice as many cookies as he gave Tim to Anna?
+Let's think step by step
+He gave twice 15 cookies to Anna which is 2*15 = 30 cookies
+He gave out a total of 15+23+30 = 68 cookies
+The remainder in the fridge is 256-68 = 188 cookies
+The answer is 188
+
+Question: Jeremy buys 30 watermelons. He eats 3 watermelons per week. Each week he gives 2 to his dad. How many weeks will the watermelons last?
+Let's think step by step
+Jeremey goes through 3+2=5 watermelons per week.
+Therefore, the watermelons will last him to 30/5=6 weeks.
+The answer is 6
+
+Question: James is building a hall of mirrors. Three of the walls will be completed covered with glass. If two of those walls are 30 feet by 12 feet and the third is 20 feet by 12 feet, how many square feet of glass does he need?
+Let's think step by step
+First find the area of one of the long walls: 30 feet * 12 feet = 360 square feet
+Then double that amount since there are two walls: 360 square feet * 2 = 720 square feet
+Then find the area of the short wall: 20 feet * 12 feet = 240 square feet
+Then add that area to the area of the two long walls to find the total area: 720 square feet + 240 square feet = 960 square feet
+The answer is 960
+
+Question: Seth lost 17.5 pounds. Jerome lost three times that many pounds and Veronica lost 1.5 pounds more than Seth. How many pounds did the 3 people lose in total?
+Let's think step by step
+Seth = 17.5 pounds
+Jerome = 3 * 17.5 = 52.5 pounds
+Veronica = 17.5 + 1.5 = 19 pounds
+Total = 17.5 + 52.5 + 19 = 89 pounds
+The 3 people lost a total of 89 pounds.
+The answer is 89
+
+Question: Last year, Peter organized a Fun Run for his community project and 200 people signed up. Forty people did not show up to run. This year, there will be twice as many runners as last year. How many people will run this year?
+Let's think step by step
+There were 200 - 40 = 160 runners last year.
+Therefore, there will be 2 x 160 = 320 runners this year.
+The answer is 320
+
+Question: While bird watching, Gabrielle saw 5 robins, 4 cardinals, and 3 blue jays. Chase saw 2 robins, 3 blue jays, and 5 cardinals. How many more birds, in percentage, did Gabrielle saw than Chase?
+Let's think step by step
+Gabrielle saw 5 + 4 + 3 = 12 birds.
+Chase saw 2 + 3 + 5 = 10 birds.
+So, Gabrielle saw 12 - 10 = 2 more birds than Chase.
+Therefore, Gabrielle saw 2/10 x 100% = 20% more birds than Chase.
+The answer is 20
+
+Question: Three cats sat on a fence, meowing at the moon.  The first cat meowed 3 times per minute.  The second cat meowed twice as frequently as the first cat.  And the third cat meowed at one-third the frequency of the second cat.  What is the combined total number of meows the three cats make in 5 minutes?
+Let's think step by step
+The second cat meowed twice as frequently as the three meows per minute from the first cat, for a total of 2*3=6 meows per minute.
+The third cat meowed at one-third the frequency of the second cat, for a total of 6/3=2 meows per minute.
+Thus, combined, the three cats meow 3+6+2=11 times per minute.
+In five minutes, the three cats meow 5*11=55 times.
+The answer is 55
+
+Question: In a car racing competition, Skye drove a 6-kilometer track. For the first 3 kilometers, his speed was 150 kilometers per hour. For the next 2 kilometers, his speed was 50 kilometers per hour more. For the remaining 1 kilometer, his speed was twice as fast as his speed on the first 3 kilometers. What is Skye's average speed for the entire race?
+Let's think step by step
+Since time is obtained by dividing distance and speed, then Skye took 3 km/150 km per hr. = 1/50 of an hour to finish the first 3 kilometers of the race.
+His speed on the next 2 kilometers was 150 + 50 = 200 kilometers per hour.
+Hence, it took him 2 km/200 km per hr. = 1/100 of an hour to finish the next 2 kilometers.
+His speed on the remaining 1 kilometer is 150 x 2 = 300 kilometers per hour.
+Hence, it took him 1/300 of an hour to finish the 1 kilometer.
+So, the total time it took for Skye to complete the race was 1/50 + 1/100 + 1/300 = 1/30 of an hour.
+Therefore, his average speed for the entire race was 6 km/ 1/30 hour = 180 kilometers per hour.
+The answer is 180
+
+Question: Winston has 14 quarters. He then spends half a dollar on candy. How many cents does he have left?
+Let's think step by step
+Winston has 350 cents because 14 x 25 = 350
+He spends 50 cents because $1 / 2 = 50 cents
+He has 300 cents left at the end.
+The answer is 300
+
+Question: Half of Jerome's money was $43. He gave $8 to Meg and thrice as much to Bianca. How much does Jerome have left?
+Let's think step by step
+Jerome has $43 x 2 = $86.
+After giving Meg $8, he had only $86 - $8 = $78 left.
+Then he gave Bianca $8 x 3 = $24.
+So, Jerome has only $78 - $24 = $54 left.
+The answer is 54
+
+Question: {question}
+Let's think step by step
