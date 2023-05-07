@@ -1,0 +1,79 @@
+Question: Austin has 10 pairs of dress shoes he needs to polish over the weekend.  If he has polished 45% of individual shoes, how many more shoes does he need to polish?
+Let's think step by step
+He has 10 pairs of shoes and each pair is made of 2 individual shoes for a total of 10*2 = 20 shoes
+He has already polished 45% of the 20 individual shoes so he has polished .45*20 = 9 shoes
+He has 20 shoes and has already polished 9 shoes so he has 20-9 = 11 more shoes to polish
+The answer is 11
+
+Question: The owner of a Turkish restaurant wanted to prepare traditional dishes for an upcoming celebration. She ordered ground beef, in four-pound packages, from three different butchers. The following morning, the first butcher delivered 10 packages. A couple of hours later, 7 packages arrived from the second butcher. Finally, the third butcher’s delivery arrived at dusk. If all the ground beef delivered by the three butchers weighed 100 pounds, how many packages did the third butcher deliver?
+Let's think step by step
+Since each package weighed 4 pounds, the first butcher delivered 10 * 4 = 40 pounds
+The second butcher's delivery was 7 * 4 = 28 pounds
+The first two butchers therefore delivered 40 + 28 = 68 pounds
+Subtracting that weight from the total weight of ground beef gives 100 - 68 = 32 pounds
+It therefore means the third butcher delivered 32/4 = 8 packages.
+The answer is 8
+
+Question: Bob orders a dozen muffins a day for $0.75 each and sells them for $1.5 each.  How much profit does he make a week?
+Let's think step by step
+He buys them for 12*.75=$9
+He sells them for 12*1.5=$18
+So he makes 18-9=$9 per day
+That means he makes 9*7=$63 per week
+The answer is 63
+
+Question: Johann and two friends are to deliver 180 pieces of certified mail. His friends each deliver 41 pieces of mail. How many pieces of mail does Johann need to deliver?
+Let's think step by step
+Friends = 41 * 2 = 82
+Johann = 180 - 82 = 98
+Johann must deliver 98 pieces of mail.
+The answer is 98
+
+Question: An apartment complex has 4 identical buildings.  Each building has 10 studio apartments, 20 2 person apartments, and 5 4 person apartments.  How many people live in the apartment complex if it has 75% of its maximum occupancy?
+Let's think step by step
+First, we find out how many people live in each building. In addition to 10 1 person apartments, as a studio apartment is for a single person, there are 20 2 person apartments meaning there are 20*2=40 people capable of living there.
+We then find out how many people can live in the 4 person apartments by multiplying the number of available 4 person apartments by 4, performing 5*4=20 people capable of living there.
+So, in 1 building there is room for 10+40+20=70 people.
+We multiply this by the 4 buildings in total, finding a maximum occupancy of 4*70=280 people
+We then multiply this by .75 to find out how many people would live there at 75% of maximum occupancy, performing 280*.75= 210 people.
+The answer is 210
+
+Question: Amelia has laundry to do. She has a load of whites that will take 72 minutes in the washing machine and 50 minutes in the dryer. She has a load of darks that will take 58 minutes in the washing machine and 65 minutes in the dryer. She has a load of colors that will take 45 minutes in the washer and 54 minutes in the dryer. If she does one load at a time, how long will it take her to wash and dry all three loads, in minutes?
+Let's think step by step
+It will take her 72 minutes in the washer + 50 minutes in the dryer = 122 minutes for the whites.
+It will take her 58 minutes in the washer + 65 minutes in the dryer = 123 minutes for the darks.
+It will take her 45 minutes in the washer + 54 minutes in the dryer = 99 minutes for the colors.
+Altogether, it will take 122 minutes for whites + 123 minutes for darks + 99 minutes for colors = 344 minutes to do the laundry.
+The answer is 344
+
+Question: Mary used 15 gallons of fuel this week. Last week she used 20% less. How much fuel did she use in total for the two weeks?
+Let's think step by step
+Last week, she used 15 gallons * 0.2 = 3 gallons less fuel than she used this week.
+This means that she used 15 gallons – 3 gallons = 12 gallons of fuel last week.
+In total, Mary used 15 gallons + 12 gallons = 27 gallons of fuel.
+The answer is 27
+
+Question: Edric's monthly salary is $576. If he works 8 hours a day for 6 days a week, how much is his hourly rate?
+Let's think step by step
+In a week, Edric's salary is $576/4 = $144.
+In a day, Edric earns $144/6 = $24.
+Thus, his hourly rate is $24/8 = $3.
+The answer is 3
+
+Question: If eight movie tickets cost 2 times as much as one football game ticket, and each movie ticket is sold at $30, calculate the total amount of money Chandler will pay if he buys eight movie tickets and five football game tickets.
+Let's think step by step
+If each movie ticket is sold at $30, the cost of buying eight movie tickets is 8*$30 = $240
+Since eight movie tickets cost 2 times as much as one football game ticket, the cost of buying one football game ticket is $240/2 = $120
+Buying five football game tickets will cost 5*$120 = $600
+The total cost of buying eight movie tickets and five football game tickets is $600+$240 = $840
+The answer is 840
+
+Question: Beth is looking at her book collection and is wondering how many comic books she owns. She has 120 books and 65% are novels. 18 are graphic novels. The rest are comic books. What percentage of comic books does she own?
+Let's think step by step
+The proportion of graphic novels is .15 because 18 / 120 = .15
+The percentage of graphic novels is 15 because 100 x .15 = 15
+The percentage of comic books is 20 because 100 - 65 - 15 = 20
+The answer is 20
+
+Question: {question}
+Let's think step by step

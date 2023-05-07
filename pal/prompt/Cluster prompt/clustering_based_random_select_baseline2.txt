@@ -1,0 +1,77 @@
+Question: John buys a lightsaber toy.  It is twice as expensive as all his other Star Wars toys combined.  If his other Star Wars toys cost $1000, how much money has he spent in all after buying the lightsaber?
+Let's think step by step
+The lightsaber cost 1000*2=$2000
+So he has spent 2000+1000=$3000
+The answer is 3000
+
+Question: Jenna is adding black dots to a bunch of white blouses. Each blouse gets 20 dots, and each dot takes 10 ml of black dye. How many 400-ml bottles of dye does Jenna need to buy to dye 100 blouses?
+Let's think step by step
+First find the amount of dye each blouse takes: 20 dots/blouse * 10 ml/dot = 200 ml/blouse
+Then multiply the dye used per blouse by the number of blouses to find the total amount of dye used: 200 ml/blouse * 100 blouses = 20000 ml
+Then divide the amount of dye needed by the amount of dye per bottle to find the number of bottles needed: 20000 ml / 400 ml/bottle = 50 bottles
+The answer is 50
+
+Question: There are 480 grains of rice in one cup. If half a cup is 8 tablespoons and one tablespoon is 3 teaspoons, how many grains of rice are in a teaspoon?
+Let's think step by step
+First find the number of tablespoons in a full cup: 8 tablespoons/half-cup * 2 half-cups/cup = 16 tablespoons
+Then find the total number of teaspoons in a cup: 16 tablespoons/cup * 3 teaspoons/tablespoon = 48 teaspoons
+Then find the number of grains of rice per teaspoon: 480 grains / 48 teaspoons = 10 grains/teaspoon
+The answer is 10
+
+Question: Suraya picked 12 apples more than Caleb, and Caleb picked 5 apples less than Kayla. If Kayla picked 20 apples, how many more apples did Suraya pick than Kayla?
+Let's think step by step
+Caleb picked 20 - 5 = 15 apples.
+Suraya picked 12 + 15 = 27 apples.
+Suraya picked 27 - 20 = 7 apples more than Kayla
+The answer is 7
+
+Question: Loris needs three more books to have the same number as Lamont, who has twice the number of books Darryl has. If Darryl has 20 books, calculate the total number of books the three have.
+Let's think step by step
+Since Darryl has 20 books, Lamont, who has twice the number of books Darryl has, has 20*2 = 40 books.
+The total number of books both Darryl and Lamont has is 40+20 = 60 books.
+To have the same number of books as Lamont, Loris needs 3 more books, meaning she has 40-3 = 37 books.
+In total, the three has 60+37= 97 books
+The answer is 97
+
+Question: Maddie bought 2 packs of white T-shirts and 4 packs of blue T-shirts for her basketball team. The white T-shirts come in packs of 5, and the blue T-shirts come in packs of 3. Each T-shirt cost $3. How much did Maddie spend in all?
+Let's think step by step
+The number of white T-shirts is 2 × 5 = 10.
+The number of blue T-shirts is 4 × 3 = 12.
+The total number of T-shirts is 10 + 12 = 22.
+Maddie spent $3 × 22 = $66 in all.
+The answer is 66
+
+Question: Chester must deliver ten bales of hay to Farmer Brown. Farmer Brown wants Chester to supply better quality hay and double the delivery of bales of hay. If the previous hay cost $15 per bale, and the better quality one cost $18 per bale, how much more money will Farmer Brown need to meet his own new requirements?
+Let's think step by step
+The hay previously cost $15 per bale so 10 bales would cost $15*10 = $150
+Double 10 bales is 10*2 = 20 bales
+Better quality hay cost $18 per bale so 20 bales would cost $18*20 = $360
+Farmer Brown would need $360-$150 = $210 more
+The answer is 210
+
+Question: Opal won $100.00 betting on a horse race.  She put half of her winnings into savings and bet the other half of her winnings.  This time, she made a 60% profit and again, put half of her earnings into savings.  How much did she put into her savings?
+Let's think step by step
+She won $100.00 and put half into savings so she put 100/2 = $50.00 into savings
+She won $100.00 and put $50.00 into savings so that leaves 100-50 = $50.00 to bet
+She bet $50.00 and made a 60% profit so her profit was 50*.60 = $30.00
+The total wins in the second bet are 30+50 = $80
+She put half of her $80.00 earnings into savings so that's 80/2 = $40.00 into savings
+She put $50.00 into saving from her 1st bet and $40.00 from her second so she has saved 50+40 = $90.00
+The answer is 90
+
+Question: An auctioneer raises the price of an item he is auctioning by $5 every time someone new bids on it. Two people enter a bidding war on a desk and the price goes from $15 to $65 before the desk is sold. How many times did each person bid on the desk?
+Let's think step by step
+The desk price was raised 65 - 15 = $50.
+At $5 per bid, there were 50 / 5 = 10 bids on the desk.
+There were two bidders, so each bid 10 / 2 = 5 times on the desk.
+The answer is 5
+
+Question: A dime has the same value as 10 pennies and a nickel has the same value as 5 pennies. How many pennies will Grace have by exchanging her 10 dimes and 10 nickels?
+Let's think step by step
+Grace will have 10 x 10 = 100 pennies from her dimes.
+She will have 10 x 5 = 50 pennies from her nickels.
+Therefore, she will have a total of 100 + 50 = 150 pennies.
+The answer is 150
+
+Question: {question}
+Let's think step by step
